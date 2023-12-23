@@ -1,10 +1,13 @@
 "use client";
 import axios from "axios";
 import { useEffect } from "react";
-export default async function Home() {
+export default  function Home() {
   const getCookie = async()=>{
-    const response = await axios.post("https://back-cookie.onrender.com",{name:"hola"},{withCredentials:true});
-    console.log(response.data);
+    try{
+      const name = "hello"
+      const response = await axios.post("http://localhost:5000/post",{name},{withCredentials:true});
+      console.log(response.data);
+    }catch(err:any){console.log(err.message)};
   }
   useEffect(()=>{
 getCookie();
@@ -15,3 +18,4 @@ getCookie();
     </div>
   )
 }
+
