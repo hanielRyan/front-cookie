@@ -9,10 +9,18 @@ export default  function Home() {
       console.log(response.data);
     }catch(err:any){console.log(err.message)};
   }
+
+  const checkCookie=async()=>{
+    await axios.get("https://back-cookie.onrender.com/cookie",{withCredentials:true});
+  }
+
+  useEffect(()=>{
+  getCookie();
+    checkCookie();
+  });
   return (
     <div>
       cookie
-      <button className="text-white bg-yellow px-5 py-2" onClick={getCookie}>click me</button>
     </div>
   )
 }
