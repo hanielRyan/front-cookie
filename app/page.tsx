@@ -11,7 +11,8 @@ export default  function Home() {
   }
 
   const checkCookie=async()=>{
-    await axios.get("https://back-cookie.onrender.com/cookie",{withCredentials:true});
+   const response = await axios.get("https://back-cookie.onrender.com/cookie",{withCredentials:true});
+    console.log(response.data);
   }
 
   useEffect(()=>{
