@@ -22,14 +22,15 @@ export default  function Home() {
     checkCookie();
   });
   return (
-    <div>
-      cookie
-      {img && <Image src={URL.createObjectURL(img)} alt="" height={200} width={200}/> }
-      <input type="file" onChange={(e)=>{
-      console.log(e.target.files[0]);
-      setImg(e.target.files[0])
-    }/>
-    </div>
+<div>
+    cookie
+    <Image src={URL.createObjectURL(img)} alt="" height={200} width={200}/>
+    <input type="file" onChange={(e)=>{
+        const file = e.target?.files![0];
+     console.log(file);
+     setImg(file);
+    }} />
+</div>
   )
 }
 
