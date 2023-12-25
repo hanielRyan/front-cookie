@@ -24,7 +24,7 @@ export default  function Home() {
   return (
 <div>
     cookie
-    <Image src={URL.createObjectURL(img)} alt="" height={200} width={200}/>
+  {img && <Image src={URL.createObjectURL(img)} alt="" height={200} width={200}/> } 
     <input type="file" onChange={(e)=>{
         const file = e.target?.files![0];
      console.log(file);
