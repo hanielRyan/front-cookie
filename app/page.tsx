@@ -25,7 +25,8 @@ export default  function Home() {
 <div>
     cookie
   {img && <Image src={URL.createObjectURL(img)} alt="" height={200} width={200}/> } 
-    <input type="file" onChange={(e)=>{
+  <label htmlFor="file">choose file</label>
+    <input type="file" id="file" className="hidden" onChange={(e)=>{
         const file = e.target?.files![0];
      console.log(file);
      setImg(file);
