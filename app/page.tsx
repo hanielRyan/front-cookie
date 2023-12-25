@@ -1,7 +1,9 @@
 "use client";
 import axios from "axios";
-import { useEffect } from "react";
+import Image from "next/image";
+import { useEffect,useState } from "react";
 export default  function Home() {
+  const [img,setImg]=useState<any>();
   const getCookie = async()=>{
     try{
       const name = "hello"
@@ -22,6 +24,11 @@ export default  function Home() {
   return (
     <div>
       cookie
+      {img && <Image src={URL.createObjectURL(img)} alt="" height={200} width={200}/> }
+      <input type="file" onChange={(e)=>{
+      console.log(e.target.files[0]);
+      setImg(e.target.files[0])
+    }/>
     </div>
   )
 }
